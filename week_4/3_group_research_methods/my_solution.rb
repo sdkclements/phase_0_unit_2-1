@@ -5,26 +5,35 @@ my_family_pets_ages = {"Evi" => 6, "Hoobie" => 3, "George" => 12, "Bogart" => 4,
             "Annabelle" => 0, "Ditto" => 3}
 
 # Person 1's solution
+# grep returns an array of every element in enum for which patter === elements if the optional block
+#is supplied, each matching element is passed to it, and the blocks result is stored in the out put array.
 def my_array_finding_method(source, thing_to_find)
+	#search array to find x and report what x was found in.
+	source.grep(/#{thing_to_find}/)
   # Your code here!
 end
 
 def my_hash_finding_method(source, thing_to_find)
   # Your code here!
+  same_age = []
+  source.each do |object, age|
+  	same_age << object if age == thing_to_find
+  end
+  matching
 end
 
-# Identify and describe the ruby method you implemented. 
+Identify and describe the ruby method you implemented. 
 # 
 #
 #
-
+# 
 # Person 2
 def my_array_modification_method(source, thing_to_modify)
-  # Your code here!
+# Your code here!
 end
 
 def my_hash_modification_method(source, thing_to_modify)
-  # Your code here!
+# Your code here!
 end
 
 # Identify and describe the ruby method you implemented. 
