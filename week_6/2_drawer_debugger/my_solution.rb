@@ -25,12 +25,12 @@ attr_reader :contents
 			@open = false
 		end 
 
-		def add_item
+		def add_item(item) # needed to add item
 			@contents << item
 		end
 
-		def remove_item(item = @contents.pop) #what is `#pop` doing?
-			@contents.delete(item)
+		def remove_item(item = @contents.pop) # removing the item from
+			@contents.delete(item)   # need item in previous to create this method
 		end
 
 		def dump  # what should this method return?
@@ -41,16 +41,17 @@ attr_reader :contents
 			puts "The drawer contains:"
 				@contents.each {|silverware| puts "- " + silverware.type }
 		end
-
+end
 
 class Silverware
-	attr_reader :type
+	attr_reader :type 
 
-	# Are there any more methods needed in this class?
+	# i dont think there are more needed because type can be anything at all
 
 	def initialize(type, clean = true)
 		@type = type
 		@clean = clean
+		
 	end
 
 	def eat
@@ -79,6 +80,9 @@ silverware_drawer.view_contents
 silverware_drawer.remove_item
 silverware_drawer.view_contents
 sharp_knife = Silverware.new("sharp_knife")
+dagger = Silverware.new("butcher_blade")
+silverware_drawer.add_item(butcher_blade)
+
 
 
 silverware_drawer.add_item(sharp_knife)

@@ -1,7 +1,7 @@
 # U2.W6: PezDispenser Class from User Stories
 
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [by myself
 
 # 1. Review the following user stories:
 # - As a pez user, I'd like to be able to "create" a new pez dispenser with a group of flavors that 
@@ -15,15 +15,37 @@
 
 
 # 2. Pseudocode
+#initialize the types of pez by this i just mean flavors
 
 
 
 # 3. Initial Solution
 
 class PezDispenser
+	def initialize(flavors)
+		@flavors = flavors
+
+	end
+
+	def pez_count
+		@flavors.count
+	end
+
+	def show_flav
+		@flavors.each {|flavor| #show just whats in there aka
+			flavor}
+		end
  
-# your code here!
- 
+	def add_flav(add_flavor)
+		@flavors << add_flavor # this just adds a new type of flavor to the dispensor
+	 
+	end
+
+	def eat_one
+		@flavors.map{|one|one.delete}
+
+	end
+
 end
  
 
@@ -41,9 +63,9 @@ flavors = %w(cherry chocolate cola grape lemon orange peppermint raspberry straw
 super_mario = PezDispenser.new(flavors)
 puts "A new pez dispenser has been created. You have #{super_mario.pez_count} pez!"  
 puts "Here's a look inside the dispenser:"  
-puts super_mario.see_all_pez 
+puts super_mario.show_flav 
 puts "Adding a purple pez."
-super_mario.add_pez("purple")   # mmmmm, purple flavor
+super_mario.add_flav("purple")   # mmmmm, purple flavor
 puts "Now you have #{super_mario.pez_count} pez!"
 puts "Oh, you want one do you?"
 puts "The pez flavor you got is: #{super_mario.get_pez}"
@@ -53,3 +75,5 @@ puts "Now you have #{super_mario.pez_count} pez!"
 
 
 # 5. Reflection 
+# I love pez so i really loved this one. It was also pretty easy as i worked on later challenges, it was simple once i figured
+# out how to use the << well.
